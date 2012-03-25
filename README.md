@@ -20,3 +20,8 @@ And to unbind
     $('.box').off('clickout');
     
 This plugin implement the native `jQuery.event.special`. 
+
+### Mobile support
+
+In case of a touch device, the 'touchstart' event is used in place of 'click', as 
+Webkit mobile doesn't register 'click' events on every element.
