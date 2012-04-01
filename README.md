@@ -2,8 +2,8 @@
 
 jQuery plugin for to track clicks outside of an element.
 
-This plugins uses event delegation and stopPropagation(). If you want to preserve the bubbling 
-of your click events, don't use this plugin. Otherwise, use simply:
+This plugins **does not** stop propagation of events, compared to other similar solutions, which makes
+it absolutely safe to use.
 
     $('.box').clickout(function(){...});
     
