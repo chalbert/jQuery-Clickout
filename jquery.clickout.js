@@ -34,7 +34,8 @@
       * Touchstart is.
       * @static
       */
-      click = window.Touch ? 'touchstart' : 'click';
+      is_touch_device = 'ontouchstart' in document.documentElement,
+      click = is_touch_device ? 'touchstart' : 'mousedown';
 
 
   /**
