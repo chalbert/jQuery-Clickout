@@ -34,7 +34,8 @@
       * Touchstart is.
       * @static
       */
-      click = window.Touch ? 'touchstart' : 'click';
+      is_touch_device = 'ontouchstart' in document.documentElement,
+      click = is_touch_device ? 'touchstart' : 'mousedown';
 
 
   /**
@@ -88,7 +89,7 @@
       // A closure is used create a static id
         return function(e){
           // If the click is not inside the element, call the callback
-          if (!e.originalEvent.clickin || e.originalEvent.clickin !== id) {
+          if (!(e.target.clickin && e.target.clickin == id) && $(handleObj.selector ? handleObj.selector : target).is(":visible")) {
             handleObj.handler.apply(this, arguments);
           }
         };
